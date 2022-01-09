@@ -1,4 +1,5 @@
 class Category{
+    //funtion to show categories in DOM
     static showDropdown(name,id){
         const dropdown = document.querySelector('.categories-dropdown');
         const option = document.createElement('option');
@@ -6,6 +7,7 @@ class Category{
         option.text = name;
         dropdown.appendChild(option);
     }
+    //funtion to get all categories from API
     static getAllCategories(url){
         fetch(url)
         .then(categories => categories.json())

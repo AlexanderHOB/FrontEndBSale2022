@@ -1,6 +1,9 @@
 class Product{
 
-    // STATIC FUNCTION TO RENDER DOM
+    // function show products in dom
+    // name = represent name of product
+    // price = represent price of product
+    // imageUrl = represent image url of product
     static showDOM(name,price,imageUrl){
         const cards = document.querySelector('#cards'); // get card's container
         cards.innerHTML += `
@@ -22,6 +25,7 @@ class Product{
             </div>
         `;
     }
+    // function to get all products and print in dom
     static getAllProducts(url){
         fetch(url)
         .then(products => products.json())
@@ -37,6 +41,7 @@ class Product{
         })
         .catch(err => console.error(err));
     }
+    //function to get product by name
     static getProductByName(url,name){
         fetch(`${url}?name=${name}`)
         .then(products => products.json())
@@ -52,6 +57,7 @@ class Product{
         })
         .catch(err => console.error(err));
     }
+    //function to get product by category
     static getProductByCategory(url,category){
         fetch(`${url}/categories/${category}/products`)
         .then(products => products.json())
@@ -67,6 +73,10 @@ class Product{
         })
         .catch(err => console.error(err));
     }
+    //function to sort products by attribute
+    //url = Url where to get all products sorted
+    //attribute = attribute by which the products will be ordered 
+    //order = ASC or DESC
     static getSortProduct(url,attribute,order = 'desc'){
         fetch(`${url}?sort=${order}&sort_by=${attribute}`)
         .then(products => products.json())
@@ -82,6 +92,7 @@ class Product{
         })
         .catch(err => console.error(err));
     }
+    //funtion to show pagination
     static pagination(links){
 
         const pagination = document.querySelector('.pagination');
