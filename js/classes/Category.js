@@ -7,7 +7,7 @@ class Category{
         dropdown.appendChild(option);
     }
     static getAllCategories(url){
-        fetch(`${url}/categories`)
+        fetch(url)
         .then(categories => categories.json())
         .then(categories => {
             categories.data.map(category =>{

@@ -23,27 +23,22 @@ class Product{
         `;
     }
     static getAllProducts(url){
-        fetch(`${url}/products`)
+        fetch(url)
         .then(products => products.json())
         .then(products => {
             const data = products.data;
             const cards = document.querySelector('#cards');
             //CLEAR PRODUCTS
             cards.innerHTML = '';
+            this.pagination(products.links);
             return data.map(({name,price,url_image}) =>{
                 this.showDOM(name,price,url_image);
             });
         })
         .catch(err => console.error(err));
     }
-    static getProductById(url,id){
-        fetch(`${url}/${id}`)
-        .then(product => product.json())
-        .then(product => {product})
-        .catch(err => console.error(err));
-    }
     static getProductByName(url,name){
-        fetch(`${url}/products?name=${name}`)
+        fetch(`${url}?name=${name}`)
         .then(products => products.json())
         .then(products => {
             const data = products.data;
@@ -86,5 +81,35 @@ class Product{
             });
         })
         .catch(err => console.error(err));
+    }
+    static pagination(links){
+
+        const pagination = document.querySelector('.pagination');
+        pagination.innerHTML ='';
+        links.map(link=>{
+            let pageContainer = document.createElement('div');
+            let page = document.createElement('p');
+            pageContainer.classList.add('page');
+            page.innerHTML = link.label;
+            page.onclick = ()=>{
+                this.getAllProducts(link.url)
+            };
+            if(link.active){
+                pageContainer.classList.add('active');
+            }
+            if(link.label === '&laquo; Previous'){
+                page.innerHTML = '<';
+            }
+            if(link.label === 'Next &raquo;'){
+                page.innerHTML = '>';
+            }
+            if(link.url === null){
+                return null;
+            }
+            if(link.label )
+            pageContainer.appendChild(page);
+            pagination.appendChild(pageContainer);
+        });
+
     }
 }
