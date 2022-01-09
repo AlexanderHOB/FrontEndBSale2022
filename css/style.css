@@ -45,13 +45,34 @@
 .main-header__item{
     padding: 1.5em;
 }
+/* Dropdown */
+.selects{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.categories-select select, .attribute-select select {
+    text-transform: capitalize;
+    background-color: #fb8c00;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    width: 250px;
+    border: none;
+    font-size: 1.1em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    appearance: button;
+    outline: none;
+    margin-bottom: 10px;
+}
 
-/* CARDS */
+/* Cards */
 #cards{
     display:flex;
     flex-flow: wrap row;
     align-items: center;
-    
+    justify-content:center;
+    width: 100%;
 }
 .card{
     margin: 10px;
@@ -73,6 +94,7 @@
 }
 .card-title{
     width: 100%;
+    height:100px;
     text-align: center;
     font-size: 0.9em;
     border-bottom: 1px solid #eee;

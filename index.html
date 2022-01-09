@@ -27,6 +27,23 @@
         </nav>
     </header>
     <main class="container">
+        <div class="selects">
+            <div class="categories-select" style="width:200px;">
+                <select class="categories-dropdown">
+                    <option value="0">Todas las Categorias:</option>
+                </select>
+            </div>
+            <div class="attribute-select" style="width:200px;">
+                <select class="categories-dropdown">
+                    <option value="0">Ordenar Por:</option>
+                    <option value="price asc"> Precio (de menor a mayor)</option>
+                    <option value="price desc"> Precio (de mayor a menor)</option>
+                    <option value="name asc"> Nombre Ascendente</option>
+                    <option value="name desc"> Nombre Descendente</option>
+                </select>
+            </div>
+        </div>
+    
         <div id="cards">
             <!-- <div class="card" id="card">
                 <div class="card-img">
@@ -47,6 +64,8 @@
         </div>
     </main>
     <script src="./js/classes/Product.js"></script>
+    <script src="./js/classes/Category.js"></script>
+
     <script src="./js/App.js"></script>
     
 </body>
