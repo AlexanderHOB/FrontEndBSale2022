@@ -47,7 +47,14 @@
 }
 
 /* CARDS */
+#cards{
+    display:flex;
+    flex-flow: wrap row;
+    align-items: center;
+    
+}
 .card{
+    margin: 10px;
     border-radius: 10px;
     display:flex;
     flex-flow: wrap column;
