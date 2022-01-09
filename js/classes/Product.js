@@ -39,5 +39,20 @@ class Product{
         .then(product => {product})
         .catch(err => console.error(err));
     }
+    static getProductByName(url,name){
+        fetch(`${url}?name=${name}`)
+        .then(products => products.json())
+        .then(products => {
+            const data = products.data;
+            const cards = document.querySelector('#cards');
+            //CLEAR PRODUCTS
+            cards.innerHTML = '';
+            //SHOW PRODUCTS BY NAME
+            return data.map(({name,price,url_image}) =>{
+                this.showDOM(name,price,url_image);
+            });
+        })
+        .catch(err => console.error(err));
+    }
 
 }
