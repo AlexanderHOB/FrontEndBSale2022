@@ -40,7 +40,7 @@ class Product{
                 this.showDOM(name,price,url_image);
             });
         })
-        .catch(err => console.error(err));
+        .catch(err => console.error('Error',err));
     }
     //function to get product by name
     static getProductByName(url,name){
@@ -107,10 +107,12 @@ class Product{
         links.map(link=>{
             let pageContainer = document.createElement('div');
             let page = document.createElement('p');
+            let urlHttps  = link.url.replace('http','https');
             pageContainer.classList.add('page');
             page.innerHTML = link.label;
+            
             page.onclick = ()=>{
-                this.getAllProducts(link.url)
+                this.getAllProducts(urlHttps);
             };
             if(link.active){
                 pageContainer.classList.add('active');
