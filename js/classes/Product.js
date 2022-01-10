@@ -34,6 +34,7 @@ class Product{
             const cards = document.querySelector('#cards');
             //CLEAR PRODUCTS
             cards.innerHTML = '';
+            //LIST OF PAGE
             this.pagination(products.links);
             return data.map(({name,price,url_image}) =>{
                 this.showDOM(name,price,url_image);
@@ -51,6 +52,8 @@ class Product{
             //CLEAR PRODUCTS
             cards.innerHTML = '';
             //SHOW PRODUCTS BY NAME
+            //LIST OF PAGE
+            this.pagination(products.links);
             return data.map(({name,price,url_image}) =>{
                 this.showDOM(name,price,url_image);
             });
@@ -66,6 +69,8 @@ class Product{
             const cards = document.querySelector('#cards');
             //CLEAR PRODUCTS
             cards.innerHTML = '';
+            //LIST OF PAGE
+            this.pagination(products.links);
             //SHOW PRODUCTS BY NAME
             return data.map(({name,price,url_image}) =>{
                 this.showDOM(name,price,url_image);
@@ -85,6 +90,8 @@ class Product{
             const cards = document.querySelector('#cards');
             //CLEAR PRODUCTS
             cards.innerHTML = '';
+            //LIST OF PAGE
+            this.pagination(products.links);
             //SHOW PRODUCTS BY NAME
             return data.map(({name,price,url_image}) =>{
                 this.showDOM(name,price,url_image);

@@ -15,7 +15,7 @@ window.addEventListener("load", ()=>{
     const search = document.querySelector('#search-product');
     search.addEventListener('input', (e)=>{
         const name = e.target.value;
-        Product.getProductByName(URL_PRODUCTS,name);
+        Product.getProductByName(URL_PRODUCTS,name); // GET PRODUCT by name
     });
     
     // change category and filter products
