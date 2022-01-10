@@ -107,7 +107,7 @@ class Product{
         links.map(link=>{
             let pageContainer = document.createElement('div');
             let page = document.createElement('p');
-            let urlHttps  = link.url.replace('http','https');
+            // let urlHttps  = link.url.replace('http','https');
             pageContainer.classList.add('page');
             page.innerHTML = link.label;
             
