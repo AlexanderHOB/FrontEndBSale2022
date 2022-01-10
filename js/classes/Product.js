@@ -112,7 +112,7 @@ class Product{
             page.innerHTML = link.label;
             
             page.onclick = ()=>{
-                this.getAllProducts(urlHttps);
+                this.getAllProducts(link.url)
             };
             if(link.active){
                 pageContainer.classList.add('active');
